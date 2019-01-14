@@ -1,0 +1,16 @@
+name: GenericJSONType
+options:
+  bundleIdPrefix: org.linusu
+  deploymentTarget:
+    macOS: '10.13'
+    iOS: '11.0'
+targets:
+  GenericJSONType:
+    type: framework
+    platform: [iOS, macOS]
+    sources: Sources
+    scheme: {}
+    settings:
+      APPLICATION_EXTENSION_API_ONLY: true
+    info:
+      path: Sources/Info.plist
