@@ -5,6 +5,7 @@ extension GenericJSONTypeTests {
         ("testCodable", testCodable),
         ("testDecodable", testDecodable),
         ("testEquality", testEquality),
+        ("testReadmeExample", testReadmeExample),
     ]
 }
 

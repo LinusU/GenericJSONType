@@ -56,6 +56,14 @@ final class GenericJSONTypeTests: XCTestCase {
         }
 
         do {
+            let input = "[[[true]]]".data(using: .utf8)!
+            let expected = JSON.array([.array([.array([.boolean(true)])])])
+            let decoded = try decoder.decode(JSON.self, from: input)
+
+            XCTAssertEqual(decoded, expected)
+        }
+
+        do {
             let input = "[{\"foo\": [{\"bar\": 1}]}]".data(using: .utf8)!
             let expected = JSON.array([.object(["foo": .array([.object(["bar": .number(1)])])])])
             let decoded = try decoder.decode(JSON.self, from: input)
@@ -75,11 +83,4 @@ final class GenericJSONTypeTests: XCTestCase {
 
         XCTAssertEqual(encoded, myJSONString)
     }
-
-    static var allTests = [
-        ("testEquality", testEquality),
-        ("testCodable", testCodable),
-        ("testDecodable", testDecodable),
-        ("testReadmeExample", testReadmeExample),
-    ]
 }
