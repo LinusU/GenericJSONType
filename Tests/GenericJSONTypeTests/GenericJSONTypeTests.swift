@@ -36,6 +36,18 @@ final class GenericJSONTypeTests: XCTestCase {
         XCTAssertEqual(obj, decoded)
     }
 
+    func testEncodable() throws {
+        let encoder = JSONEncoder()
+
+        do {
+            let input = JSON.array([.string("test")])
+            let expected = "[\"test\"]"
+            let encoded = String(data: try encoder.encode(input), encoding: .utf8)
+
+            XCTAssertEqual(encoded, expected)
+        }
+    }
+
     func testDecodable() throws {
         let decoder = JSONDecoder()
 

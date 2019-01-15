@@ -4,6 +4,7 @@ extension GenericJSONTypeTests {
     static let __allTests = [
         ("testCodable", testCodable),
         ("testDecodable", testDecodable),
+        ("testEncodable", testEncodable),
         ("testEquality", testEquality),
         ("testReadmeExample", testReadmeExample),
     ]
